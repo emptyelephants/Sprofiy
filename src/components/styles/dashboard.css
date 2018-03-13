@@ -1,0 +1,12 @@
+.user-recipe{
+  background-color:rgb(204, 204, 204);
+  width:100%;
+}
+
+.follower-recipe{
+  background-color:rgb(136, 136, 136);
+}
+
+h2{
+  padding:5px;
+}
