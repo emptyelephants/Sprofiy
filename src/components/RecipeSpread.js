@@ -9,7 +9,7 @@ export default function RecipeSpread(props){
         <ul>
           {recipeSteps}
         </ul>
-        <button className="brew-button">brew</button>
+        {/* <button className="brew-button">brew</button> */}
       </li>
     )
   })

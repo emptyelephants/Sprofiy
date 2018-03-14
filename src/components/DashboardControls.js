@@ -1,12 +1,12 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import {handleNewRecipeForm} from '../actions/controls'
+import {handleNewRecipeModal} from '../actions/controls'
 class DashboardControls extends React.Component{
   render(){
     console.log('from controls',this.props);
     return(
         <div className="dashboard-controls">
-          <button onClick={() => this.props.dispatch(handleNewRecipeForm())}>New Recipe</button>
+          <button onClick={() => this.props.dispatch(handleNewRecipeModal())}>New Recipe</button>
         </div>
     )
   }

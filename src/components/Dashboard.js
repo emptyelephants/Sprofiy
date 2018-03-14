@@ -16,7 +16,7 @@ class Dashboard extends React.Component{
 
 
   render(){
-    console.log('Dash render')
+    console.log('Dash render',this.props.recipes.myRecipes)
     const addRecipeForm = this.props.controls.isCreatingRecipe ? <NewRecipeModal/>:undefined;
     return(
       <div className="dashboard">

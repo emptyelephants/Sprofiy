@@ -1,9 +1,9 @@
 .add-recipe-modal{
   position: fixed;
   background-color: orange;
-  z-index: 2000;
+  /* z-index: 2000; */
   right:25%;
-  top:35vh;
+  top:26vh;
   width:35%;
   padding:14px;
   border-radius: 8px;
@@ -18,13 +18,20 @@
   position: absolute;
   left:0;
   top: 0;
-  z-index: 1000;
+  /* z-index: 1000; */
 }
 .recipe-name-input{
   margin:auto;
   height:40%;
   width:90%;
   font-size: 5vw;
+}
+.step-name-input{
+    margin:auto;
+    height:30%;
+    width:90%;
+    font-size:3vw;
+    margin-bottom:1vh;
 }
 .modal-controls{
   display:flex;

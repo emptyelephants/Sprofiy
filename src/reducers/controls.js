@@ -1,4 +1,4 @@
-import{HANDLE_NEW_RECIPE_FORM} from '../actions/controls'
+import{HANDLE_NEW_RECIPE_MODAL} from '../actions/controls'
 const initialState = {
   isCreatingRecipe:false,
   isAddingStep:false,
@@ -7,7 +7,7 @@ const initialState = {
 
 export default function ControlsReducer(state = initialState,action){
   switch (action.type) {
-    case HANDLE_NEW_RECIPE_FORM:
+    case HANDLE_NEW_RECIPE_MODAL:
       return{
         ...state,
         isCreatingRecipe:!state.isCreatingRecipe
