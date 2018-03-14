@@ -12,7 +12,6 @@ export default function ControlsReducer(state = initialState,action){
         ...state,
         isCreatingRecipe:!state.isCreatingRecipe
       }
-
     default:
       return state
 

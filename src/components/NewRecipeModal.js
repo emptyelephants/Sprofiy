@@ -1,8 +1,9 @@
 import React from 'react'
-import {Feild,reduxForm} from 'redux-form';
 import {connect} from 'react-redux';
-import {handleNewRecipeForm} from '../../actions/controls'
-import '../styles/addRecipe.css'
+import {handleNewRecipeForm} from '../actions/controls'
+import EspressoRecipeForm from './forms/EspressoRecipeForm'
+import './styles/addRecipe.css'
+
 class NewRecipeModal extends React.Component{
   componentDidMount(){
 
@@ -18,7 +19,7 @@ class NewRecipeModal extends React.Component{
           </div>
           <div className="add-recipe-modal">
             <p>New Recipe</p>
-
+            <EspressoRecipeForm />
             <div className ="modal-controls">
               <button onClick={() => this.handleRecipeModal()}>go back</button>
               <button>add step</button>
@@ -33,6 +34,6 @@ class NewRecipeModal extends React.Component{
 
 const mapStateToProps = state => ({
   controls:state.controls,
-  recipieForm:state.recipeForm
+  recipeForm:state.recipeForm
 })
 export default connect(mapStateToProps)(NewRecipeModal)

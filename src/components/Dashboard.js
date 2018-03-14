@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 //components and styles
 import RecipeSpread from './RecipeSpread';
 import DashboardControls from './DashboardControls'
-import NewRecipeModal from './forms/NewRecipeModal.js'
+import NewRecipeModal from './NewRecipeModal.js'
 import './styles/dashboard.css'
 //actions
 import {fetchRecipeData} from '../actions/recipes'
@@ -16,7 +16,7 @@ class Dashboard extends React.Component{
 
 
   render(){
-    console.log('render')
+    console.log('Dash render')
     const addRecipeForm = this.props.controls.isCreatingRecipe ? <NewRecipeModal/>:undefined;
     return(
       <div className="dashboard">

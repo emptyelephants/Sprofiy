@@ -1,6 +1,5 @@
 import {ADD_RECIPE_STEP} from '../actions/recipeForm'
 const initialState = {
-  totalSteps: 1
 }
 
 export default function recipeFormReducer(state=initialState,action){
