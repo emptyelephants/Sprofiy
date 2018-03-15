@@ -1,6 +1,17 @@
 import{API_BASE_URL} from '../config.js';
 import {normalizeResponseErrors} from './utils';
 import {SubmissionError} from 'redux-form';
+
+export const DECREMENT_PAGE = 'DECREMENT_PAGE'
+export const decrementPage = () => ({
+  type:DECREMENT_PAGE
+})
+export const INCREMENT_PAGE = 'INCREMENT_PAGE'
+export const incrementPage = () => ({
+  type:INCREMENT_PAGE
+})
+
+
 export const FETCH_RECIPE_DATA_SUCCESS = 'FETCH_RECIPE_DATA_SUCCESS'
 export const fetchRecipeDataSucess = recipes => ({
   type:FETCH_RECIPE_DATA_SUCCESS,
@@ -30,6 +41,7 @@ export const sendNewRecipe = (newRecipeData) => dispatch => {
   })
   .then((res) => normalizeResponseErrors(res))
   .then((res) => res.json())
+  // .then(() => dispatch)
   .catch(err => {
             const {reason, message, location} = err;
             if (reason === 'ValidationError') {

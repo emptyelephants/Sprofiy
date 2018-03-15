@@ -7,16 +7,26 @@ import NewRecipeModal from './NewRecipeModal.js'
 import './styles/dashboard.css'
 //actions
 import {fetchRecipeData} from '../actions/recipes'
+import {incrementPage,decrementPage} from '../actions/recipes'
 
 class Dashboard extends React.Component{
   componentDidMount(){
-    console.log('Did Mount')
+    console.log('Did Mount',this.props)
     this.props.dispatch(fetchRecipeData());
+  }
+  //handle negative values, hide prev on start of recipes and vice versa for the next
+  handlePagePrev(){
+    console.log('prev page');
+
+  }
+  handlePageNext(){
+    this.props.dispatch(incrementPage())
   }
 
 
   render(){
-    console.log('Dash render',this.props.recipes.myRecipes)
+    const myRecipes = this.props.recipes.myRecipes.slice(this.props.recipes.myRecipesPagination,this.props.recipes.myRecipesPagination+3)
+
     const addRecipeForm = this.props.controls.isCreatingRecipe ? <NewRecipeModal/>:undefined;
     return(
       <div className="dashboard">
@@ -27,7 +37,10 @@ class Dashboard extends React.Component{
         </div>
         <div className="user-recipe">
           <h2>My Recipes</h2>
-          <RecipeSpread recipeData={this.props.recipes.myRecipes}  />
+          <button onClick={() => this.props.dispatch(decrementPage())}>Prev</button>
+          <button onClick={() =>  this.props.dispatch(incrementPage())}>Next</button>
+
+          <RecipeSpread recipeData={myRecipes}  />
         </div>
         <div className="follower-recipe">
           <h2>John Smith's Recipes</h2>

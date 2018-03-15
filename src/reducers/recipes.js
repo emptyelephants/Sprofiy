@@ -1,8 +1,9 @@
-import{FETCH_RECIPE_DATA_ERROR,FETCH_RECIPE_DATA_SUCCESS,FETCH_RECIPE_DATA_LOADING} from '../actions/recipes'
+import{FETCH_RECIPE_DATA_ERROR, FETCH_RECIPE_DATA_SUCCESS, FETCH_RECIPE_DATA_LOADING, INCREMENT_PAGE,DECREMENT_PAGE} from '../actions/recipes'
 const initialState = {
   loading:false,
   error:null,
-  myRecipes:[]
+  myRecipes:[],
+  myRecipesPagination:0
 }
 
 export default function RecipeReducer(state = initialState, action){
@@ -24,6 +25,16 @@ export default function RecipeReducer(state = initialState, action){
         error:action.error,
         loading:false
       }
+      case INCREMENT_PAGE:
+        return{
+          ...state,
+          myRecipesPagination:state.myRecipesPagination+1
+        }
+      case DECREMENT_PAGE:
+        return{
+          ...state,
+          myRecipesPagination:state.myRecipesPagination-1
+        }
     default:
       return state;
   }
