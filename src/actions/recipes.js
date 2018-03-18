@@ -32,6 +32,7 @@ export const fetchRecipeDataError = (error) => ({
 
 export const sendNewRecipe = (newRecipeData) => dispatch => {
   console.log(newRecipeData,'from actions')
+  console.log(JSON.stringify(newRecipeData),'action strinighfed');
   return fetch(`${API_BASE_URL}/recipes`,{
     method:'POST',
     headers:{
@@ -56,15 +57,21 @@ export const sendNewRecipe = (newRecipeData) => dispatch => {
 }
 
 export const fetchRecipeData = () => (dispatch, getState) => {
+  const authToken = getState().auth.authToken;
   dispatch(fetchRecipeDataLoading())
   return fetch(`${API_BASE_URL}/recipes`,{
     method: 'GET',
     headers:{
-      //auth goes here
-    }
+      Authorization:`Bearer ${authToken}`
+    },
   })
   .then((res) => normalizeResponseErrors(res))
   .then((res) => res.json())
   .then((recipes) => dispatch(fetchRecipeDataSucess(recipes)))
   .catch((err) => dispatch(fetchRecipeDataError(err)));
 };
+
+// body: JSON.stringify({
+  //   firstParam: 'yourValue',
+  //   secondParam: 'yourOtherValue',
+  // }),

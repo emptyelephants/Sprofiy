@@ -1,5 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
+import{Redirect} from 'react-router-dom'
+
 //components and styles
 import RecipeSpread from './RecipeSpread';
 import DashboardControls from './DashboardControls'
@@ -10,22 +12,25 @@ import {fetchRecipeData} from '../actions/recipes'
 import {incrementPage,decrementPage} from '../actions/recipes'
 
 class Dashboard extends React.Component{
+
   componentDidMount(){
-    console.log('Did Mount',this.props)
-    this.props.dispatch(fetchRecipeData());
+    //fetch recipe data only if they're logged in
+    if(this.props.loggedIn){
+      console.log('fetch me')
+      this.props.dispatch(fetchRecipeData());
+    }
   }
   //handle negative values, hide prev on start of recipes and vice versa for the next
-  handlePagePrev(){
-    console.log('prev page');
-
-  }
-  handlePageNext(){
-    this.props.dispatch(incrementPage())
-  }
-
 
   render(){
-    const myRecipes = this.props.recipes.myRecipes.slice(this.props.recipes.myRecipesPagination,this.props.recipes.myRecipesPagination+3)
+    if(!this.props.loggedIn){
+        return <Redirect to='/'/>
+    }
+
+    const myRecipes = this.props.recipes.myRecipes.slice(this.props.recipes.myRecipesPagination,this.props.recipes.myRecipesPagination+4)
+    const prevButton = this.props.recipes.myRecipesPagination === 0 ? undefined : <button onClick={() => this.props.dispatch(decrementPage())}>Prev</button> ;
+    const nextButton = this.props.recipes.myRecipesPagination+4 === this.props.recipes.myRecipes.length? undefined: <button onClick={() =>  this.props.dispatch(incrementPage())}>Next</button>;
+
 
     const addRecipeForm = this.props.controls.isCreatingRecipe ? <NewRecipeModal/>:undefined;
     return(
@@ -37,10 +42,9 @@ class Dashboard extends React.Component{
         </div>
         <div className="user-recipe">
           <h2>My Recipes</h2>
-          <button onClick={() => this.props.dispatch(decrementPage())}>Prev</button>
-          <button onClick={() =>  this.props.dispatch(incrementPage())}>Next</button>
-
-          <RecipeSpread recipeData={myRecipes}  />
+          {prevButton}
+          {nextButton}
+          <RecipeSpread recipeData={myRecipes} />
         </div>
         <div className="follower-recipe">
           <h2>John Smith's Recipes</h2>
@@ -53,6 +57,9 @@ class Dashboard extends React.Component{
 
 const mapStateToProps = state =>({
   recipes:state.recipes,
-  controls:state.controls
+  controls:state.controls,
+  loggedIn: state.auth.currentUser !== null
+
+
 })
 export default connect(mapStateToProps)(Dashboard);

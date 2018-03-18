@@ -1,6 +1,7 @@
 import React from 'react';
 import './styles/recipeCard.css'
 export default function RecipeSpread(props){
+  console.log('from spread',props.currentUser)
   const recipeCards = props.recipeData.map((recipe) =>{
     const recipeSteps = recipe.steps.map((_step,index) => {return(<li key={index}>{_step}</li>)})
     return (
@@ -15,8 +16,11 @@ export default function RecipeSpread(props){
   })
 
   return (
+    <div>
+    <button>test</button>
     <ul className="recipe-spread">
       {recipeCards}
     </ul>
+  </div>
   )
 };

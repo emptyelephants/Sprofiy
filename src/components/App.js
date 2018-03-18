@@ -5,6 +5,7 @@ import {Route, withRouter} from 'react-router-dom';
 
 //components
 import Dashboard from './Dashboard';
+import LoginPage from './LoginPage.js';
 import LandingPage from './LandingPage';
 
 class App extends Component {
@@ -13,6 +14,7 @@ class App extends Component {
       <div className="App">
         <Route exact path="/" component={LandingPage} />
         <Route exact path="/dashboard" component={Dashboard} />
+        <Route exact path="/login" component={LoginPage} />
       </div>
     );
   }

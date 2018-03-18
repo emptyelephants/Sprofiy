@@ -1,11 +1,11 @@
 import React from 'react';
 
 export default class Input extends React.Component {
-    // componentDidUpdate(prevProps) {
-    //     if (!prevProps.meta.active && this.props.meta.active) {
-    //         this.input.focus();
-    //     }
-    // }
+    componentDidUpdate(prevProps) {
+        if (!prevProps.meta.active && this.props.meta.active) {
+            this.input.focus();
+        }
+    }
 
     render() {
         let error;
@@ -24,8 +24,7 @@ export default class Input extends React.Component {
             <div className="form-input">
                 <label htmlFor={this.props.input.name}>
                     {this.props.label}
-                    {error}
-                    {warning}
+
                 </label>
                 <input
                     {...this.props.input}

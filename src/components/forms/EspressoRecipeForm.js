@@ -4,9 +4,9 @@ import {Field, FieldArray, reduxForm} from 'redux-form';
 import {required, nonEmpty, isTrimmed} from './validators.js'
 import {sendNewRecipe,fetchRecipeData} from '../../actions/recipes'
 import {handleNewRecipeModal} from '../../actions/controls'
+
 export class EspressoRecipeForm extends React.Component {
     onSubmit(values) {
-    console.log(values,'the vals are')
     const {steps, recipeName} = values;
     const newRecipe = {steps, recipeName, brewMethod:'semi-auto espresso machine'}
     this.props.dispatch(handleNewRecipeModal());
@@ -37,8 +37,9 @@ export class EspressoRecipeForm extends React.Component {
         <button
           type="button"
           title="Remove Step"
-          onClick={() => fields.remove(index)}
-        >X</button>
+          onClick={() => fields.remove(index)
+          }>Delete Step
+        </button>
         <Field
           name={step}
           type="text"
@@ -71,14 +72,9 @@ export class EspressoRecipeForm extends React.Component {
 }
 
 
+
 export default reduxForm({
   form: 'espressoRecipeForm'
 })(EspressoRecipeForm);
 
 //
-//
-// export default reduxForm({
-//     form: 'registration',
-//     onSubmitFail: (errors, dispatch) =>
-//         dispatch(focus('registration', Object.keys(errors)[0]))
-// })(RegistrationForm);
