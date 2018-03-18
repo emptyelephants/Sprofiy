@@ -8,8 +8,7 @@ import DashboardControls from './DashboardControls'
 import NewRecipeModal from './NewRecipeModal.js'
 import './styles/dashboard.css'
 //actions
-import {fetchRecipeData} from '../actions/recipes'
-import {incrementPage,decrementPage} from '../actions/recipes'
+import {incrementPage, decrementPage, fetchRecipeData} from '../actions/dashboard'
 
 class Dashboard extends React.Component{
 
@@ -20,16 +19,16 @@ class Dashboard extends React.Component{
       this.props.dispatch(fetchRecipeData());
     }
   }
-  //handle negative values, hide prev on start of recipes and vice versa for the next
+  //handle negative values, hide prev on start of dashboard and vice versa for the next
 
   render(){
     if(!this.props.loggedIn){
         return <Redirect to='/'/>
     }
-
-    const myRecipes = this.props.recipes.myRecipes.slice(this.props.recipes.myRecipesPagination,this.props.recipes.myRecipesPagination+4)
-    const prevButton = this.props.recipes.myRecipesPagination === 0 ? undefined : <button onClick={() => this.props.dispatch(decrementPage())}>Prev</button> ;
-    const nextButton = this.props.recipes.myRecipesPagination+4 === this.props.recipes.myRecipes.length? undefined: <button onClick={() =>  this.props.dispatch(incrementPage())}>Next</button>;
+    console.log(this.props)
+    const myRecipes = this.props.dashboard.myRecipes.slice(this.props.dashboard.myRecipesPagination,this.props.dashboard.myRecipesPagination+4)
+    const prevButton = this.props.dashboard.myRecipesPagination === 0 ? undefined : <button onClick={() => this.props.dispatch(decrementPage())}>Prev</button> ;
+    const nextButton = this.props.dashboard.myRecipesPagination+4 > this.props.dashboard.myRecipes.length-1 ? undefined: <button onClick={() =>  this.props.dispatch(incrementPage())}>Next</button>;
 
 
     const addRecipeForm = this.props.controls.isCreatingRecipe ? <NewRecipeModal/>:undefined;
@@ -56,7 +55,7 @@ class Dashboard extends React.Component{
 }
 
 const mapStateToProps = state =>({
-  recipes:state.recipes,
+  dashboard:state.dashboard,
   controls:state.controls,
   loggedIn: state.auth.currentUser !== null
 

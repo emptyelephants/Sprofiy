@@ -30,13 +30,13 @@ export const fetchRecipeDataError = (error) => ({
 });
 
 
-export const sendNewRecipe = (newRecipeData) => dispatch => {
-  console.log(newRecipeData,'from actions')
-  console.log(JSON.stringify(newRecipeData),'action strinighfed');
+export const sendNewRecipe = (newRecipeData) => (dispatch, getState) => {
+  const authToken = getState().auth.authToken;
   return fetch(`${API_BASE_URL}/recipes`,{
     method:'POST',
     headers:{
-      'content-type':'application/json'
+      'content-type':'application/json',
+      Authorization:`Bearer ${authToken}`
     },
     body:JSON.stringify(newRecipeData)
   })

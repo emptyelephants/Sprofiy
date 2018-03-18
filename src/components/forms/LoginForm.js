@@ -1,28 +1,38 @@
 import React from 'react';
-import {Field, reduxForm} from 'redux-form';
+import {Field, reduxForm, focus} from 'redux-form';
 import {login} from '../../actions/auth';
 import {required, nonEmpty} from './validators';
 import Input from './Input';
 export class LoginForm extends React.Component{
   onSubmit(values){
-    console.log(values)
-    console.log('logging in !');
     const {username,password} = values;
     return this.props.dispatch(login(username,password));
   }
   render(){
+    let error;
+        if (this.props.error) {
+            error = (
+                <div className="login-form-error" >
+                    {this.props.error}
+                </div>
+            );
+        }
     return(
-      <div>
+      <div className="login-form-container">
       <form className="login-form" onSubmit={this.props.handleSubmit(values => {
         this.onSubmit(values)
       })}>
+        {error}
+        <label htmlFor="username">username</label>
         <Field
           component={Input}
           type="text"
           name="username"
           id="username"
           validate={[required, nonEmpty]}
+          validateOn='submit'
         />
+        <label htmlFor="password">password</label>
         <Field
           component={Input}
           type="password"
@@ -30,7 +40,9 @@ export class LoginForm extends React.Component{
           id="password"
           validate={[required,nonEmpty]}
         />
-        <button className="login-submit">button</button>
+        <button className="login-submit" disabled={this.props.pristine}>
+          login
+        </button>
 
       </form>
     </div>
@@ -39,6 +51,7 @@ export class LoginForm extends React.Component{
 };
 
 export default reduxForm({
-  form:'loginForm'
+  form:'loginForm',
+  onSubmitFail:(errors,dispatch) => dispatch(focus('loginForm','username'))
 
 })(LoginForm);

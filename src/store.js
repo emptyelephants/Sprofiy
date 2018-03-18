@@ -5,6 +5,5 @@ const store = createStore(
   reducer,
   applyMiddleware(thunk)
 );
-console.log('from store',store.getState())
 
 export default store;

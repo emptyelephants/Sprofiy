@@ -17,7 +17,6 @@ export default function RecipeSpread(props){
 
   return (
     <div>
-    <button>test</button>
     <ul className="recipe-spread">
       {recipeCards}
     </ul>

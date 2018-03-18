@@ -1,4 +1,4 @@
-import{FETCH_RECIPE_DATA_ERROR, FETCH_RECIPE_DATA_SUCCESS, FETCH_RECIPE_DATA_LOADING, INCREMENT_PAGE,DECREMENT_PAGE} from '../actions/recipes'
+import{FETCH_RECIPE_DATA_ERROR, FETCH_RECIPE_DATA_SUCCESS, FETCH_RECIPE_DATA_LOADING, INCREMENT_PAGE,DECREMENT_PAGE} from '../actions/dashboard'
 const initialState = {
   loading:false,
   error:null,
@@ -6,7 +6,7 @@ const initialState = {
   myRecipesPagination:0
 }
 
-export default function RecipeReducer(state = initialState, action){
+export default function DashboardReducer(state = initialState, action){
   switch (action.type) {
     case FETCH_RECIPE_DATA_LOADING:
       return{
