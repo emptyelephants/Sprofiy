@@ -62,6 +62,7 @@ export class EspressoRecipeForm extends React.Component {
           <Field component="input"
             type="text"
             name="recipeName"
+            placeholder="Recipe Name"
             id="recipeName"
             className="recipe-name-input"
             validate={[required, nonEmpty, isTrimmed]}

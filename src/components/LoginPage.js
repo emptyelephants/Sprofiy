@@ -2,16 +2,21 @@ import React from 'react'
 import {connect} from 'react-redux'
 import LoginForm from './forms/LoginForm.js'
 import{Link, Redirect} from 'react-router-dom'
-
+import './styles/loginPage.css'
 export function LoginPage(props){
   if(props.loggedIn){
     return <Redirect to="/dashboard"/>
   }
   return(
     <div className="login-page">
-      <h1>Login</h1>
-      <LoginForm />
-      <p>No account? <Link to="/">Register</Link></p>
+      <div className="nav-bar">
+        <h1>Sproify</h1>
+      </div>
+      <div className="login-page-container">
+        <h2>Login</h2>
+        <LoginForm />
+        <p>No account? <Link to="/">Register.</Link></p>
+      </div>
     </div>
   )
 }

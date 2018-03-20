@@ -22,9 +22,9 @@ class Dashboard extends React.Component{
   //handle negative values, hide prev on start of dashboard and vice versa for the next
 
   render(){
-    if(!this.props.loggedIn){
-        return <Redirect to='/'/>
-    }
+    // if(!this.props.loggedIn){
+    //     return <Redirect to='/'/>
+    // }
     console.log(this.props)
     const myRecipes = this.props.dashboard.myRecipes.slice(this.props.dashboard.myRecipesPagination,this.props.dashboard.myRecipesPagination+4)
     const prevButton = this.props.dashboard.myRecipesPagination === 0 ? undefined : <button onClick={() => this.props.dispatch(decrementPage())}>Prev</button> ;

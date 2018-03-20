@@ -1,16 +1,18 @@
 /* mobile attributes */
-.landing-page{
-  font-family: 'Roboto', sans-serif;
+
+.nav-bar{
+  width:100%;
 }
+
 .jumboTron-container{
   position:relative;
-  height:65vh;
+  height:489px;
   padding:0px;
-  /* margin-bottom:35px; */
+  margin-bottom:125px;
 }
 .jumboTron-image{
   /* position:fixed; */
-  height:100%;
+  height:125%;
   width:100%;
   background-image:  linear-gradient(
       to bottom,
@@ -33,13 +35,16 @@
   position:absolute;
   left:100%;
   transform:translate(-100%,0%);
-  padding-left:15px;
-  top:13vh;
+  padding-left:13px;
+  padding:4px 0;
+
+  top:100px;
   background-color: white;
   border-radius: 0px;
   width: 100%;
-  height:52vh;
-  border:1px solid red;
+  height:400px;
+  /* border:1px solid red; */
+  /* overflow:hidden; */
 }
 .user-registration button{
   padding:4px;
@@ -50,40 +55,66 @@
 
 .landing-page h1{
   margin:0px;
+  display:inline-block;
   font-size: 4.3em;
 }
 .user-registration input{
+    -webkit-appearance: none;
+    border:1px solid grey;
+    background: none;
     padding: 4px;
     margin: 5px 0px;
     width: 90%;
     font-size: 3.2vh;
+    border-radius: 4px;
+    box-shadow: inset 0 2px 4px 0 rgba(0,0,0,0.08)
 }
 .user-registration label{
   display:block;
   font-weight: 100;
 }
 .landing-page p{
-  font-weight: 00;
-  font-size: 5.4vw
+  margin:0px;
+  font-weight: 100;
+  font-size: 4.4vw
 }
 
 .tag-line-container{
-  border:1px solid green;
+
+  text-align: center;
+  /* border:1px solid green; */
   display:flex;
-  padding:10px;
+  padding:15px 0px;
   justify-content: space-between;
   flex-wrap: wrap;
   text-align: center;
-  height:300px;
   font-size: 1.9vw;
+  margin-top: 12px;
 }
 .tag-line-container .tag-line-card{
-  width:100%;
+  display:block;
+  width:55%;
+  height:225px;
   background-color:yellow;
   /*^^place holder background, should be static version of gif */
-  margin: 4px 0px;
-
-
+  margin: auto;
+  margin-top:15px;
+  padding:18px;
+  border-radius: 4px;
+  background: url(http://via.placeholder.com/350x350);
+  background-size: cover;
+  background-position: center;
+  border-top: 4px solid rgb(172, 152, 198);
+  box-shadow: 0 2px 6px 0 rgba(0,0,0,0.2);
+}
+.tag-line-container h3{
+  font-size: 1.5em;
+  text-decoration: underline;
+}
+.landing-page-footer{
+  padding: 30px 15px;
+  position:relative;
+  background-color: grey;
 }
 
 /*css grid setup*/
@@ -94,29 +125,41 @@
 }
 
 /* when the screen is big enough */
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 900px) {
     /* For desktop: */
 
     .jumboTron-container{
-      height:75vh;
+      height:85vh;
+      margin-bottom:0px;
+      /* border:solid 1px yellow; */
+    }
+    .jumboTron-image{
+      /* position:fixed; */
+      height:100%;
+
     }
     .user-registration{
       position:absolute;
       left:90%;
       transform:translate(-100%,0%);
       padding-left:5px;
-      top:15vh;
+      top:95px;
       background-color: white;
       border-radius: 8px;
       width: 33.33%;
-      border:1px solid red;
-      height:43vh;
+      /* height:400px; */
+      /* border:1px solid red; */
+    }
+    .user-registration h2{
+      font-size: 1.8em;
     }
     .landing-page p{
       font-weight: 100;
       font-size: 1.4vw
     }
     .tag-line-container{
+      padding:25px 5px ;
+      margin-top: 2px;
       display:flex;
       justify-content: space-around;
       text-align: center;
@@ -124,16 +167,10 @@
     }
     .tag-line-container .tag-line-card{
       width:300px;
+      height:350px;
       background-color: grey;
-      margin:0px 10px;
+      margin:10px 10px;
+
     }
 
-    .col-5 {width: 41.66%;}
-    .col-6 {width: 50%;}
-    .col-7 {width: 58.33%;}
-    .col-8 {width: 66.66%;}
-    .col-9 {width: 75%;}
-    .col-10 {width: 83.33%;}
-    .col-11 {width: 91.66%;}
-    .col-12 {width: 100%;}
 }
