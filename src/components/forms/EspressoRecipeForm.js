@@ -35,6 +35,7 @@ export class EspressoRecipeForm extends React.Component {
     {fields.map((step, index) => (
       <li key={index}>
         <button
+          className="recipe-form-remove-step"
           type="button"
           title="Remove Step"
           onClick={() => fields.remove(index)
@@ -42,6 +43,7 @@ export class EspressoRecipeForm extends React.Component {
         </button>
         <Field
           name={step}
+          className="recipe-form-step-field"
           type="text"
           component={renderField}
           label={`Step #${index + 1}`}

@@ -1,16 +1,35 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import RegistrationForm from './forms/RegistrationForm.js'
-export default function LandingPage(props){
+import RegistrationForm from './forms/RegistrationForm.js';
+import TagLineCard from './TagLineCard';
+import './styles/landingPage.css'
 
+export default function LandingPage(props){
   return(
-    <div className="landing-page">
-      <div className="jumboTron">
-      <h1>Sproify</h1>
-      <h2>Register</h2>
-      <RegistrationForm />
-      <Link to="/login"> Login </Link>
-    </div>
+    <div className="landing-page row">
+      <div className="nav-bar">
+        <h1>Sproify</h1>
+      </div>
+      <div className="jumboTron-container">
+        <div className="jumboTron-image col-12">
+        </div>
+        <div className="user-registration">
+          <h2>All your esspresso recipes in one place</h2>
+          <RegistrationForm />
+          <p>Already have an account? <Link to="/login"> Login </Link></p>
+        </div>
+      </div>
+      <div className="tag-line-container">
+        <TagLineCard className="create" title={"Create"}
+          body={"Be as detailed as you want with your recipes"}
+        />
+        <TagLineCard className="organize" title={"Organize"}
+          body={"Organize your recipes into categories and mark your favorites"}
+        />
+        <TagLineCard className="enjoy" title={"Enjoy"}
+          body={"Take the guess work out of your mornings and stick to the best part of coffee"}
+        />
+      </div>
     </div>
 
   )
