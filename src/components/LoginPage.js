@@ -13,7 +13,7 @@ export function LoginPage(props){
         <h1>Sproify</h1>
       </div>
       <div className="login-page-container">
-        <h2>Login</h2>
+        <h2>Welcome Back</h2>
         <LoginForm />
         <p>No account? <Link to="/">Register.</Link></p>
       </div>

@@ -1,5 +1,5 @@
 import React from 'react';
-import './styles/recipeCard.css'
+import './styles/recipeSpread.css'
 export default function RecipeSpread(props){
   console.log('from spread',props.currentUser)
   const recipeCards = props.recipeData.map((recipe) =>{

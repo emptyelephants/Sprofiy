@@ -22,6 +22,7 @@ class Dashboard extends React.Component{
   //handle negative values, hide prev on start of dashboard and vice versa for the next
 
   render(){
+    //LOGS OUT USER
     // if(!this.props.loggedIn){
     //     return <Redirect to='/'/>
     // }
@@ -45,10 +46,7 @@ class Dashboard extends React.Component{
           {nextButton}
           <RecipeSpread recipeData={myRecipes} />
         </div>
-        <div className="follower-recipe">
-          <h2>John Smith's Recipes</h2>
-          {/* <RecipeSpread /> */}
-        </div>
+        
       </div>
     )
   }

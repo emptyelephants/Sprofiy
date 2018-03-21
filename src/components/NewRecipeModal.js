@@ -2,7 +2,7 @@ import React from 'react'
 import {connect} from 'react-redux';
 import {handleNewRecipeModal} from '../actions/controls'
 import EspressoRecipeForm from './forms/EspressoRecipeForm'
-import './styles/addRecipe.css'
+import './styles/newRecipeModal.css'
 
 class NewRecipeModal extends React.Component{
 
@@ -12,16 +12,13 @@ class NewRecipeModal extends React.Component{
   render(){
     console.log('from modal',this.props)
     return(
-      <div>
+      <div className="modal-container">
+
           <div className="add-recipe-background" onClick={() =>this.handleRecipeModal() }>
           </div>
           <div className="add-recipe-modal">
+            <h2>New Recipe</h2>
             <EspressoRecipeForm />
-            <div className ="modal-controls">
-              <button onClick={() => this.handleRecipeModal()}>go back</button>
-              <button>add step</button>
-              <button onClick={() => console.log('submit')}>add recipe</button>
-            </div>
           </div>
       </div>
 

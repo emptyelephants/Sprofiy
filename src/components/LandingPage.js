@@ -17,7 +17,7 @@ class LandingPage extends React.Component{
           <h1>Sproify</h1>
         </div>
         <div className="jumboTron-container">
-          <div className="jumboTron-image col-12">
+          <div className="jumboTron-image" aria-label="Image of espresso shot pulling">
           </div>
           <div className="user-registration">
             <h2>All your espresso recipes in one place</h2>

@@ -1,5 +1,4 @@
 /* mobile attributes */
-
 .nav-bar{
   width:100%;
 }
@@ -14,13 +13,14 @@
   /* position:fixed; */
   height:125%;
   width:100%;
+  transform:scaleX(-1);
   background-image:  linear-gradient(
-      to bottom,
-      rgba(111, 170, 213, 0.8),
+      to right bottom,
+      rgba(111, 170, 213, 0.41),
       rgba(131, 131, 131, 0.08)),
-    url(http://via.placeholder.com/1600x500);
-  background-size: cover;
-  background-position: top;
+    url('../../assets/landing-hero.jpeg');
+  background-size:cover;
+  background-position: center;
 }
 .nav-bar{
   color:rgb(255,255,255);
@@ -43,32 +43,49 @@
   border-radius: 0px;
   width: 100%;
   height:400px;
+  box-shadow: 0 2px 6px 0 rgba(0,0,0,0.2);
   /* border:1px solid red; */
   /* overflow:hidden; */
 }
-.user-registration button{
-  padding:4px;
-  width:93%;
-  margin:5px 0px;
-  font-size: 3.2vh;
-}
-
 .landing-page h1{
+  padding-left:35px;
+  font-family:'Roboto';
   margin:0px;
   display:inline-block;
   font-size: 4.3em;
 }
 .user-registration input{
-    -webkit-appearance: none;
-    border:1px solid grey;
-    background: none;
-    padding: 4px;
-    margin: 5px 0px;
-    width: 90%;
-    font-size: 3.2vh;
-    border-radius: 4px;
-    box-shadow: inset 0 2px 4px 0 rgba(0,0,0,0.08)
+  -webkit-appearance: none;
+  border:1px solid grey;
+  background: none;
+  padding: 4px;
+  margin: 5px 0px;
+  width: 90%;
+  font-size: 3.2vh;
+  border-radius: 4px;
+  box-shadow: inset 0 2px 4px 0 rgba(0,0,0,0.08)
 }
+.user-registration button{
+  background-color:rgb(90, 139, 222);
+  padding:4px;
+  width:93%;
+  margin:5px 0px;
+  font-size: 3.2vh;
+  color:white;
+  border-radius: 4px;
+  height:40px;
+  transition: all .15s;
+  backface-visibility: hidden;
+}
+.user-registration button:hover{
+  transform: translateY(-3px);
+  box-shadow: 0px 10px 20px rgba(0,0,0,.2);
+}
+.user-registration button:active{
+  transform: translate(-1px);
+  box-shadow: 0px 5px 10px rgba(0,0,0,.2);
+}
+
 .user-registration label{
   display:block;
   font-weight: 100;
@@ -101,15 +118,37 @@
   margin-top:15px;
   padding:18px;
   border-radius: 4px;
-  background: url(http://via.placeholder.com/350x350);
+  /* background: url(http://via.placeholder.com/350x350); */
   background-size: cover;
   background-position: center;
-  border-top: 4px solid rgb(172, 152, 198);
+  border-top: 4px solid rgb(152, 189, 198);
   box-shadow: 0 2px 6px 0 rgba(0,0,0,0.2);
 }
+.tag-line-container div:nth-child(1){
+  color:rgb(255,255,255);
+  background: url('../../assets/tagline_1.jpeg');
+  background-position:center;
+  background-repeat: no-repeat;
+  background-size:cover;
+}
+.tag-line-container div:nth-child(2){
+  color:rgb(255,255,255);
+  background: url('../../assets/tagline_3.jpeg');
+  background-position:center;
+  background-repeat: no-repeat;
+  background-size:cover;
+}
+.tag-line-container div:nth-child(3){
+  color:rgb(255,255,255);
+  background: url('../../assets/tagline_2.jpeg');
+  background-position:center;
+  background-repeat: no-repeat;
+  background-size:cover;
+}
+
 .tag-line-container h3{
   font-size: 1.5em;
-  text-decoration: underline;
+  margin-bottom:45px;
 }
 .landing-page-footer{
   padding: 30px 15px;
@@ -125,7 +164,7 @@
 }
 
 /* when the screen is big enough */
-@media only screen and (min-width: 900px) {
+@media only screen and (min-width: 900px) and (min-height:690px) {
     /* For desktop: */
 
     .jumboTron-container{
@@ -136,11 +175,12 @@
     .jumboTron-image{
       /* position:fixed; */
       height:100%;
-
+      transform:scaleX(-1);
+      background-size:cover;
     }
     .user-registration{
       position:absolute;
-      left:90%;
+      left:95%;
       transform:translate(-100%,0%);
       padding-left:5px;
       top:95px;
