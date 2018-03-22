@@ -1,3 +1,11 @@
 *{
-  box-sizing: border-box;
+  margin:0;
+  padding:0;
+-webkit-margin-before:0em;
+-webkit-margin-after:0em;
 }
+ul{
+  -webkit-margin-before:0em;
+  -webkit-margin-after:0em;
+}
+ul,ol,dl{margin:0 auto; padding:0}

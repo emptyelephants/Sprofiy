@@ -27,6 +27,7 @@ export default function authReducer(state =initialState, action){
         authToken:action.authToken
       }
     case CLEAR_AUTH:
+    console.log('clearing');
       return{
         ...state,
         authToken:null,

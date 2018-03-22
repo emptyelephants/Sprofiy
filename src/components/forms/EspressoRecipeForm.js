@@ -1,23 +1,27 @@
 import React from 'react';
 // store form fields in an array
 import {Field, FieldArray, reduxForm} from 'redux-form';
-import {required, nonEmpty, isTrimmed,length} from './validators.js'
+import {required, nonEmpty, isTrimmed} from './validators.js'
 import {sendNewRecipe,fetchRecipeData} from '../../actions/dashboard'
 import {handleNewRecipeModal} from '../../actions/controls'
 import Input from './Input.js'
 
 
-const blurbLength = length({min:0, max:50})
 export class EspressoRecipeForm extends React.Component {
     onSubmit(values) {
       console.log(values);
-    const {steps, recipeName,blurb} = values;
-    const newRecipe = {steps, recipeName, espressoType:'Ristretto',blurb}
+    const {steps, recipeName,blurb,espressoType} = values;
+    const newRecipe = {steps, recipeName, espressoType,blurb}
     this.props.dispatch(handleNewRecipeModal());
       return this.props.dispatch(sendNewRecipe(newRecipe))
         .then(() => this.props.dispatch(fetchRecipeData()))
     }
+    handleNewRecipeModal(){
 
+    }
+    handleCancel(){
+      this.props.dispatch(handleNewRecipeModal());
+    }
   render(){
 
     const renderField = ({ input, label, type, meta: { touched, error } }) => (
@@ -74,10 +78,11 @@ export class EspressoRecipeForm extends React.Component {
             type="text"
             name="espressoType"
             placeholder="Drink Type"
+            id="espressoType"
             spellCheck="true"
             default="Espresso"
             className="recipe-form-espresso-type-input"
-            validate={[required,nonEmpty,isTrimmed]}
+            validate={[required,nonEmpty]}
           />
           <FieldArray name="steps" component={renderSteps} />
           <Field component="input"
@@ -87,7 +92,11 @@ export class EspressoRecipeForm extends React.Component {
             className="recipe-blurb"
             placeholder="Write about your recipe (50 char max)"
           />
-          <button type="submit">Submit</button>
+          <div className="recipe-form-button-container">
+            <button type="submit" className="recipe-submit">Submit</button>
+            <button type="submit" className="recipe-cancel"
+              onClick={() => this.handleCancel()}>Cancel</button>
+          </div>
       </form>
   )}
 }

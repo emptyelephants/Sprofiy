@@ -17,6 +17,7 @@ export default function DashboardReducer(state = initialState, action){
         return{
           ...state,
           myRecipes:action.recipes,
+          allRecipes:action.allRecipes,
           loading:false
         }
     case FETCH_RECIPE_DATA_ERROR:

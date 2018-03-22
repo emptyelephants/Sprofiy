@@ -5,12 +5,10 @@
 .add-recipe-modal{
   position: absolute;
   background-color: white;
-  top:24px;
+  top:150px;
+  left:0px;
   width:100%;
   padding-bottom:14px;
-  /* margin-bottom: 150px; */
-  /* animation: popModal .5s ease-out; */
-  /* text-align: center; */
 }
 
 .add-recipe-background{
@@ -19,7 +17,7 @@
   background-color:rgba(0, 0, 0, 0.62);
   text-align:center;
   background-size:cover;
-  position: absolute;
+  position: fixed;
   left:0;
   top: 0;
   /* z-index: 1000; */
@@ -28,6 +26,9 @@
 .add-recipe-modal ul{
   list-style: none;
   padding:0;
+}
+.recipe-steps{
+  margin:0;
 }
 
 .add-recipe-modal h2{
@@ -104,8 +105,8 @@
 .recipe-form-step-input{
   margin:auto;
   height:30%;
-  width:85vw;
-  font-size:2.3em;
+  width:88vw;
+  font-size:2.1em;
   margin-bottom:1.4vh;
 }
 .recipe-form-remove-step{
@@ -123,10 +124,54 @@
 }
 .recipe-blurb{
   font-size:1.3em;
-  width:80%;
+  width:90%;
   height:4vh;
 }
+.recipe-form-button-container{
+  margin-top: 14px;
+  display:flex;
+  justify-content:space-around;
 
+}
+.recipe-submit{
+  width: 14%;
+  /* display:block; */
+  background-color: green;
+  margin-left:auto;
+  margin-right: auto;
+}
+.recipe-cancel{
+  width:14%;
+  /* display:block; */
+  background-color: rgba(249, 15, 15, 0.72);
+  margin-left:auto;
+  margin-right: auto;
+}
+
+/* move this later */
+
+.recipe-modal-body{
+  border:1px solid red;
+  padding:0px 15px;
+}
+
+.recipe-modal-body h3{
+  font-size: 2.6em;
+}
+.recipe-modal-body h4{
+  font-size: 1.6em;
+}
+.recipe-blurb{
+  font-weight: 100;
+  font-size: 1.3em;
+}
+.recipe-steps{
+  font-size: 1.4em;
+
+}
+.recipe-steps li{
+  margin:14px 0px;
+}
 
 @media only screen and (min-width: 999px) {
   .add-recipe-modal{

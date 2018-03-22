@@ -10,10 +10,11 @@ export class LoginForm extends React.Component{
   }
   render(){
     let error;
-        if (this.props.error) {
+      // const authToken = getState().auth.authToken;
+        if (this.props.loginError) {
             error = (
                 <div className="login-form-error" >
-                    {this.props.error}
+                    <span>Incorrect Username or Password</span>
                 </div>
             );
         }
@@ -22,7 +23,6 @@ export class LoginForm extends React.Component{
       <form className="login-form" onSubmit={this.props.handleSubmit(values => {
         this.onSubmit(values)
       })}>
-        {error}
         <label htmlFor="username">username</label>
         <Field
           component={Input}
@@ -40,9 +40,11 @@ export class LoginForm extends React.Component{
           id="password"
           validate={[required,nonEmpty]}
         />
+
         <button className="login-submit" disabled={this.props.pristine}>
           login
         </button>
+        {error}
 
       </form>
     </div>
@@ -51,7 +53,7 @@ export class LoginForm extends React.Component{
 };
 
 export default reduxForm({
-  form:'loginForm',
-  onSubmitFail:(errors,dispatch) => dispatch(focus('loginForm','username'))
+  form:'login',
+  onSubmitFail:(errors,dispatch) => dispatch(focus('login','username'))
 
 })(LoginForm);

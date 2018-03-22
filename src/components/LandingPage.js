@@ -12,10 +12,8 @@ class LandingPage extends React.Component{
       return <Redirect to='/dashboard' />
     }
     return (
-      <div className="landing-page row">
-        <div className="nav-bar">
-          <h1>Sproify</h1>
-        </div>
+
+      <div className="landing-page">
         <div className="jumboTron-container">
           <div className="jumboTron-image" aria-label="Image of espresso shot pulling">
           </div>
@@ -29,8 +27,8 @@ class LandingPage extends React.Component{
           <TagLineCard className="create" title={"Create"}
             body={"Be as detailed as you want with your recipes"}
           />
-          <TagLineCard className="organize" title={"Organize"}
-            body={"Organize your recipes into categories and mark your favorites"}
+          <TagLineCard className="organize" title={"Explore"}
+            body={"See recipes from other users all over the globa"}
           />
           <TagLineCard className="enjoy" title={"Enjoy"}
             body={"Take the guess work out of your mornings and stick to the best part of coffee"}

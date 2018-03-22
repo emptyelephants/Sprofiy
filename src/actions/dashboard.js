@@ -57,6 +57,7 @@ export const sendNewRecipe = (newRecipeData) => (dispatch, getState) => {
 }
 
 export const fetchRecipeData = () => (dispatch, getState) => {
+  console.log('fetching');
   const authToken = getState().auth.authToken;
   dispatch(fetchRecipeDataLoading())
   return fetch(`${API_BASE_URL}/recipes`,{
@@ -70,6 +71,22 @@ export const fetchRecipeData = () => (dispatch, getState) => {
   .then((recipes) => dispatch(fetchRecipeDataSucess(recipes)))
   .catch((err) => dispatch(fetchRecipeDataError(err)));
 };
+export const fetchAllRecipeData = () => (dispatch,getState) => {
+  console.log('fetching EVERYTHING!')
+  const authToken = getState().auth.authToken;
+  dispatch(fetchRecipeDataLoading())
+  return fetch(`${API_BASE_URL}/recipes/all`,{
+    method: 'GET',
+    headers:{
+      Authorization:`Bearer ${authToken}`
+    },
+  })
+  .then((res) => normalizeResponseErrors(res))
+  .then((res) => res.json())
+  .then((recipes) => dispatch(fetchRecipeDataSucess(recipes)))
+  .catch((err) => dispatch(fetchRecipeDataError(err)));
+
+}
 
 // body: JSON.stringify({
   //   firstParam: 'yourValue',

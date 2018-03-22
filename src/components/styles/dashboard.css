@@ -1,9 +1,10 @@
 .dashboard{
+  margin-top:100px;
   height:100vh;
   border:1px solid red;
+  padding:0px 20px;
 }
 .user-recipe{
-  background-color:rgb(204, 204, 204);
   width:100%;
 }
 

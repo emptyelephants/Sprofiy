@@ -8,13 +8,12 @@ export function LoginPage(props){
     return <Redirect to="/dashboard"/>
   }
   return(
+
     <div className="login-page">
-      <div className="nav-bar">
-        <h1>Sproify</h1>
-      </div>
+
       <div className="login-page-container">
         <h2>Welcome Back</h2>
-        <LoginForm />
+        <LoginForm loginError={props.error} />
         <p>No account? <Link to="/">Register.</Link></p>
       </div>
     </div>
@@ -23,7 +22,8 @@ export function LoginPage(props){
 
 
 const mapStateToProps = state => ({
-  loggedIn: state.auth.currentUser !== null
+  loggedIn: state.auth.currentUser !== null,
+  error: state.auth.error !== null
 })
 
 export default connect(mapStateToProps)(LoginPage);

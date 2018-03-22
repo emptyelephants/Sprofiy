@@ -1,20 +1,72 @@
-.recipe-card{
-  background-color:white;
-  margin-right: 5px;
-  margin-bottom:19px;
-  padding:15px;
-  width:50%;
-  border-radius: 8px;
-}
-
 .recipe-spread{
   list-style: none;
   display:flex;
-  width:50%;
-  /* margin */
+  width:100%;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  appearance:none;
 }
-.brew-button{
-  position: relative;
-  top:1px;
-  left:110px;
+
+
+
+
+.recipe-card{
+  display:grid;
+  border-radius: 4px;
+  background:white;
+  width:250px;
+  height:300px;
+  margin-right: 50px;
+  margin-bottom:24px;
+  grid-template-columns: repeat(6,1fr);
+  grid-gap:1px;
+  grid-template-rows: repeat(6,1fr);
+  /* border:1px solid red; */
+  box-shadow: 0 2px 6px 0 rgba(0,0,0,0.2);
+}
+.card-deco{
+  grid-column:1/7;
+  grid-row: 1/2;
+  background-color:	rgb(186,255,201);
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+}
+.card-content{
+  padding-left: 12px;
+  grid-column: 1/6;
+  grid-row: 2/6;
+}
+.card-content h1{
+  font-size:2em;
+  display: block
+}
+.card-content h2{
+  font-weight:100;
+  font-size:0.9em;
+  padding:0;
+}
+.card-content span{
+  font-weight: 400;
+}
+.card-controls{
+  color: white;
+  background-color:;
+  grid-column: 2/7;
+  grid-row: 6;
+}
+.card-view-recipe{
+  color: white;
+  font-size: 1.4em;
+  border-radius: 6px;
+  width:140px;
+  height:40px;
+  background:rgb(186,255,201);
+  border:none;
+}
+@media only screen and (min-width: 900px) and (min-height:690px) {
+
+.recipe-spread > ul{
+      margin:0px;
+}
+
 }
