@@ -29,7 +29,6 @@ export const fetchRecipeDataError = (error) => ({
 });
 
 export const fetchRecipeData = () => (dispatch, getState) => {
-  console.log('fetching');
   const authToken = getState().auth.authToken;
   dispatch(fetchRecipeDataLoading())
   return fetch(`${API_BASE_URL}/recipes`,{
@@ -94,7 +93,6 @@ export const deleteOneRecipe = (recipeId) => (dispatch, getState) =>{
 }
 
 export const fetchAllRecipeData = () => (dispatch,getState) => {
-  console.log('fetching EVERYTHING!')
   const authToken = getState().auth.authToken;
   dispatch(fetchRecipeDataLoading())
   return fetch(`${API_BASE_URL}/recipes/all`,{

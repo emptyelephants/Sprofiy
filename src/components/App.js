@@ -9,7 +9,7 @@ import './styles/App.css'
 import Dashboard from './Dashboard';
 import LoginPage from './LoginPage.js';
 import LandingPage from './LandingPage';
-import PublicDash from './PublicDash'
+import Share from './Share';
 
 class App extends Component {
   render() {
@@ -17,8 +17,8 @@ class App extends Component {
       <div className="App">
         <NavBar />
         <Route exact path="/" component={LandingPage} />
+        <Route exact path="/share/:recipeId" component={Share} />
         <Route exact path="/dashboard" component={Dashboard} />
-        <Route exact path="/recipes" component={PublicDash} />
         <Route exact path="/login" component={LoginPage} />
       </div>
     );

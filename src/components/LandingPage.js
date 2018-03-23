@@ -4,7 +4,6 @@ import {connect} from 'react-redux';
 import RegistrationForm from './forms/RegistrationForm.js';
 import TagLineCard from './TagLineCard';
 import './styles/landingPage.css'
-import LandingFooter from './LandingFooter';
 
 class LandingPage extends React.Component{
   render(){

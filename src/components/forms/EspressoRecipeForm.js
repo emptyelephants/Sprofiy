@@ -4,7 +4,6 @@ import {Field, FieldArray, reduxForm} from 'redux-form';
 import {required, nonEmpty, isTrimmed} from './validators.js'
 import {sendNewRecipe,fetchRecipeData} from '../../actions/dashboard'
 import {handleNewRecipeModal} from '../../actions/controls'
-import Input from './Input.js'
 
 
 export class EspressoRecipeForm extends React.Component {

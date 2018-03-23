@@ -27,7 +27,7 @@
 
 .add-recipe-modal ul{
   list-style: none;
-  padding:0;
+  /* padding:0; fixme*/
 }
 .recipe-steps{
   margin:0;
@@ -73,7 +73,6 @@
   backface-visibility: hidden;
 }
 .add-recipe-modal button:hover{
-  /* transform: translateY(-1.5px); */
   box-shadow: 0px 10px 20px rgba(0,0,0,.02);
 }
 .recipe-name-input{
@@ -87,7 +86,7 @@
 .recipe-form-espresso-type-input{
   margin-top:4px;
   font-size: 1.3em;
-  width:45%;
+  width:65%;
 }
 
 .recipe-form-add-step{
@@ -100,23 +99,23 @@
 
 .recipe-form-step-container {
   display:flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
   margin-bottom: 1.4vh;
 }
 .recipe-form-step-input{
+  color: red;
   margin:auto;
-  height:8vw;
-  width:75vw;
-  font-size:2.1em;
+  font-size:1.4em;
   margin-bottom:1.4vh;
+  width:70vw;
 }
 .recipe-form-remove-step{
   background-color: rgba(249, 15, 15, 0.72);
   padding: 4px;
   margin: 0px 12px;
   width: 49px;
-  height: 49px;
+  height: 46px;
   color:white;
   border:0px;
   transition: all .2s;
@@ -124,11 +123,7 @@
 .recipe-form-remove-step:hover{
   background-color: rgba(255, 0, 0, 0.99);
 }
-.recipe-blurb{
-  font-size:1.3em;
-  width:90%;
-  height:4vh;
-}
+
 .recipe-form-button-container{
   margin-top: 14px;
   display:flex;
@@ -156,25 +151,51 @@
 }
 
 .recipe-modal-body h3{
-  font-size: 2.6em;
+  font-size: 2.4em;
+  margin:10px 0px;
 }
 .recipe-modal-body h4{
-  font-size: 1.6em;
+  font-size: 1.4em;
+  font-weight: 500;
+  margin:5px 0px;
+  display: inline-block;
+  margin-right: 30px;
 }
 .recipe-blurb{
+  display: inline-block;
+  width: 90%;
+  height: 25px;
   font-weight: 100;
-  font-size: 1.3em;
+  font-size: 1.2em;
+  margin:10px 0;
+}
+
+.recipe-type{
+  display: inline-block;
+  font-weight:200;
+}
+.recipe-steps-header{
+  width:100%;
 }
 .recipe-steps{
-  font-size: 1.4em;
-
+  border-left: 1px solid grey;
+  margin-left: 15px;
+  padding-left: 10px;
+  font-size: 1.3em;
+  font-weight: 500;
 }
+
 .recipe-steps li{
   margin:14px 0px;
 }
+.recipe-modal-author{
+  display: inline-block;
+  text-align: right;
+  width: 100%;
+  padding-right: 10px;
+}
 .recipe-controls{
   margin-top: 15px;
-  background-color: silver;
   display:flex;
   width:100%;
   justify-content: space-around;
@@ -184,19 +205,34 @@
   padding:1px 10px;
 }
 .recipe-share{
+  background-color: green;
+  padding:1px 10px;
+
 }
+.recipe-share a{
+  text-decoration: none;
+}
+.recipe-share a:visited, a:link{
+  color:white;
+}
+
+
 .recipe-delete{
     background-color:rgba(249, 15, 15, 0.72);
     padding:1px 10px;
 
 }
 
-@media only screen and (min-width: 999px) {
+@media only screen and (min-width: 1000px){
+    .recipe-form-step-input{
+      width:70vw;
+
+    }
+}
+@media only screen and (min-width: 1200px) {
   .add-recipe-modal{
     width:65%;
-    /* padding:0px 14px; */
     border-radius: 8px;
-    /* transform: translate(-50%,0%); */
     left:20%;
     top:50px;
   }

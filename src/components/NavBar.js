@@ -1,9 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
-import NavBarControls from './NavBarControls.js';
 import './styles/navBar.css'
-import {handleNewRecipeModal} from '../actions/controls'
 import {clearAuth} from '../actions/auth'
 class NavBar extends React.Component {
   render(){

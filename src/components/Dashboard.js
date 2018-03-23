@@ -8,7 +8,7 @@ import NewRecipeModal from './NewRecipeModal'
 import ViewRecipeModal from './ViewRecipeModal'
 import {handleNewRecipeModal} from '../actions/controls'
 //actions
-import {incrementPage, decrementPage, fetchRecipeData} from '../actions/dashboard'
+import {fetchRecipeData} from '../actions/dashboard'
 class Dashboard extends React.Component{
 
   componentDidMount(){
