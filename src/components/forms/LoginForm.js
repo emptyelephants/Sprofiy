@@ -10,7 +10,6 @@ export class LoginForm extends React.Component{
   }
   render(){
     let error;
-      // const authToken = getState().auth.authToken;
         if (this.props.loginError) {
             error = (
                 <div className="login-form-error" >

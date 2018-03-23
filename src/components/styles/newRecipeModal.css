@@ -100,7 +100,6 @@
   margin-bottom: 1.4vh;
 }
 .recipe-form-step-input{
-  color: red;
   margin:auto;
   font-size:1.4em;
   margin-bottom:1.4vh;
@@ -128,14 +127,13 @@
 }
 .recipe-submit{
   width: 14%;
-  background-color: rgb(164,224,174);
+  background-color: rgb(103, 221, 122);
   margin-left:auto;
   backface-visibility: none;
   margin-right: auto;
 }
 .recipe-cancel{
   width:14%;
-  /* display:block; */
   background-color: rgba(249, 15, 15, 0.72);
   margin-left:auto;
   margin-right: auto;
@@ -196,11 +194,11 @@
   justify-content: space-around;
 }
 .recipe-back{
-  background-color:rgba(249, 15, 15, 0.72);
+  background-color:rgb(133, 210, 249);
   padding:1px 10px;
 }
 .recipe-share{
-  background-color: green;
+  background-color: rgb(103, 221, 122);
   padding:1px 10px;
 
 }

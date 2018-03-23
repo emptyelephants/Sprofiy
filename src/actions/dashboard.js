@@ -55,11 +55,11 @@ export const sendNewRecipe = (newRecipeData) => (dispatch, getState) => {
   })
   .then((res) => normalizeResponseErrors(res))
   .then((res) => res.json())
-  // .then(() => dispatch)
+
   .catch(err => {
             const {reason, message, location} = err;
             if (reason === 'ValidationError') {
-                // Convert ValidationErrors into SubmissionErrors for Redux Form
+
                 return Promise.reject(
                     new SubmissionError({
                         [location]: message
@@ -82,7 +82,6 @@ export const deleteOneRecipe = (recipeId) => (dispatch, getState) =>{
     .catch(err => {
               const {reason, message, location} = err;
               if (reason === 'ValidationError') {
-                  // Convert ValidationErrors into SubmissionErrors for Redux Form
                   return Promise.reject(
                       new SubmissionError({
                           [location]: message

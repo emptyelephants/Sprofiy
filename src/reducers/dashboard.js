@@ -41,5 +41,3 @@ export default function DashboardReducer(state = initialState, action){
   }
 
 }
-// FETCH_RECIPE_DATA_SUCCESS
-// FETCH_RECIPE_DATA_ERROR
