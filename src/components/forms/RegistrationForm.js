@@ -1,5 +1,4 @@
 import React from 'react'
-import '../styles/registrationForm.css';
 import {Field, reduxForm, focus} from 'redux-form'
 import {required, nonEmpty, matches, length} from './validators'
 import {registerUser} from '../../actions/users.js'
@@ -22,7 +21,7 @@ export class RegistrationForm extends React.Component{
   }
 
   render(){
-      
+
         return(
         <form id="user-registration"
           onSubmit={this.props.handleSubmit((values) => this.onSubmit(values))}>

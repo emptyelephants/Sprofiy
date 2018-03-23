@@ -14,33 +14,32 @@ const initialState = {
   currentUser:null
 }
 
-export default function authReducer(state =initialState, action){
+export default function authReducer(state = initialState, action) {
   switch (action.type) {
     case AUTH_REQUEST:
-      return{
+      return {
         ...state,
         loading:true
       }
     case SET_AUTH_TOKEN:
-      return{
+      return {
         ...state,
         authToken:action.authToken
       }
     case CLEAR_AUTH:
-    console.log('clearing');
-      return{
+      return {
         ...state,
         authToken:null,
         currentUser:null
       }
     case AUTH_SUCCESS:
-      return{
+      return {
         ...state,
         loading:false,
         currentUser:action.currentUser
       }
     case AUTH_ERROR:
-      return{
+      return {
         ...state,
         loading:false,
         error:action.error

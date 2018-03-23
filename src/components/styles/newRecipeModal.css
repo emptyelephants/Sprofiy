@@ -1,14 +1,16 @@
 .modal-container{
   width:100vw;
+  z-index: 1;
 }
 
 .add-recipe-modal{
   position: absolute;
   background-color: white;
-  top:150px;
+  top:80px;
   left:0px;
   width:100%;
   padding-bottom:14px;
+  border-top: 10px solid rgb(133, 210, 249);
 }
 
 .add-recipe-background{
@@ -41,9 +43,10 @@
   width:100%;
   margin:auto;
   margin-bottom:18px;
-  background-color: rgb(152, 189, 198);
+  font-weight: bold;
+  /* background-color: rgb(152, 189, 198); */
+  background-color:rgb(133, 210, 249);
 }
-
 .add-recipe-modal input{
   -webkit-appearance: none;
   border: 0px;
@@ -57,7 +60,6 @@
   box-shadow: inset 0 2px 4px 0 rgba(0,0,0,0.08);
   transition: all .2s;
 }
-
 .add-recipe-modal input:focus{
   outline:none;
   border-bottom:2px solid rgba(82, 182, 255, 0.99);
@@ -71,7 +73,7 @@
   backface-visibility: hidden;
 }
 .add-recipe-modal button:hover{
-  transform: translateY(-1.5px);
+  /* transform: translateY(-1.5px); */
   box-shadow: 0px 10px 20px rgba(0,0,0,.02);
 }
 .recipe-name-input{
@@ -89,7 +91,7 @@
 }
 
 .recipe-form-add-step{
-  background-color:rgb(90, 139, 222);
+  background-color:rgb(133, 210, 249);
   margin-left: 18px;
   margin-bottom: 19px;
   width:150px;
@@ -104,8 +106,8 @@
 }
 .recipe-form-step-input{
   margin:auto;
-  height:30%;
-  width:88vw;
+  height:8vw;
+  width:75vw;
   font-size:2.1em;
   margin-bottom:1.4vh;
 }
@@ -136,8 +138,9 @@
 .recipe-submit{
   width: 14%;
   /* display:block; */
-  background-color: green;
+  background-color: rgb(164,224,174);
   margin-left:auto;
+  backface-visibility: none;
   margin-right: auto;
 }
 .recipe-cancel{
@@ -148,10 +151,7 @@
   margin-right: auto;
 }
 
-/* move this later */
-
 .recipe-modal-body{
-  border:1px solid red;
   padding:0px 15px;
 }
 
@@ -172,28 +172,40 @@
 .recipe-steps li{
   margin:14px 0px;
 }
+.recipe-controls{
+  margin-top: 15px;
+  background-color: silver;
+  display:flex;
+  width:100%;
+  justify-content: space-around;
+}
+.recipe-back{
+  background-color:rgba(249, 15, 15, 0.72);
+  padding:1px 10px;
+}
+.recipe-share{
+}
+.recipe-delete{
+    background-color:rgba(249, 15, 15, 0.72);
+    padding:1px 10px;
+
+}
 
 @media only screen and (min-width: 999px) {
   .add-recipe-modal{
     width:65%;
     /* padding:0px 14px; */
     border-radius: 8px;
-    transform: translate(-50%,0%);
-    left:50vw;
+    /* transform: translate(-50%,0%); */
+    left:20%;
+    top:50px;
   }
   .add-recipe-modal input{
     margin-left: 18px;
   }
   .recipe-form-step-input{
     width:568px;
-
-  }
-  .add-recipe-modal h2{
-    /* padding:0px -14px; */
-    /* margin-left:-14px; */
-    /* margin-right:-14px; */
-    border-top-left-radius: 4px;
-    border-top-right-radius: 4px;
+    height:25px;
   }
 }
 

@@ -7,19 +7,12 @@ import {handleNewRecipeModal} from '../actions/controls'
 import {clearAuth} from '../actions/auth'
 class NavBar extends React.Component {
   render(){
-    let userControls;
     let handleLogButton;
     if(this.props.loggedIn){
       handleLogButton = (
         <button className="nav-button"
           onClick={() => this.props.dispatch(clearAuth())}><Link to="/">Sign Out</Link></button>
         );
-      userControls = (
-        <div className="nav-bar-lower">
-            <NavBarControls />
-            <button className="nav-button" onClick={() => this.props.dispatch(handleNewRecipeModal())}>New Recipe</button>
-          </div>
-        )
     }
     else{
       handleLogButton = (
@@ -32,7 +25,6 @@ class NavBar extends React.Component {
             <h1 className="sproify-logo">Sproify</h1>
             {handleLogButton}
         </div>
-        {userControls}
       </div>
     )
   }

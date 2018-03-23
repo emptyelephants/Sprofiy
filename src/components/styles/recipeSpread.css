@@ -7,16 +7,15 @@
   appearance:none;
 }
 
-
-
-
 .recipe-card{
   display:grid;
   border-radius: 4px;
   background:white;
   width:250px;
   height:300px;
-  margin-right: 50px;
+  /* margin-right: 35px; */
+  margin-right: auto;
+  margin-left:auto;
   margin-bottom:24px;
   grid-template-columns: repeat(6,1fr);
   grid-gap:1px;
@@ -33,25 +32,37 @@
 }
 .card-content{
   padding-left: 12px;
-  grid-column: 1/6;
-  grid-row: 2/6;
+
 }
-.card-content h1{
-  font-size:2em;
-  display: block
+.card-recipename{
+  font-size:1.8em;
+  display: block;
+  grid-column:2/6;
+  grid-row: 3;
+  margin-bottom: 15px
 }
-.card-content h2{
+.card-type{
   font-weight:100;
   font-size:0.9em;
   padding:0;
+  grid-column: 2/3;
+  grid-row: 2;
 }
-.card-content span{
+
+.card-blurb{
   font-weight: 400;
+  font-size: 0.80em;
+  grid-row: 4;
+  grid-column:2/4
 }
 .card-controls{
+  
   color: white;
   background-color:;
-  grid-column: 2/7;
+  grid-column: 2/3;
+  width:10%;
+  /* margin-left: auto;
+  margin-right: auto; */
   grid-row: 6;
 }
 .card-view-recipe{
@@ -64,9 +75,13 @@
   border:none;
 }
 @media only screen and (min-width: 900px) and (min-height:690px) {
-
+  .recipe-card{
+    margin-right: 35px;
+    margin-left:0;
+   }
+/*
 .recipe-spread > ul{
-      margin:0px;
-}
+    margin:0px;
+  } */
 
 }

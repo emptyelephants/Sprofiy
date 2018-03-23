@@ -27,14 +27,13 @@ class LandingPage extends React.Component{
           <TagLineCard className="create" title={"Create"}
             body={"Be as detailed as you want with your recipes"}
           />
-          <TagLineCard className="organize" title={"Explore"}
-            body={"See recipes from other users all over the globa"}
+          <TagLineCard className="organize" title={"Share"}
+            body={"Send recipes to other coffee lovers"}
           />
           <TagLineCard className="enjoy" title={"Enjoy"}
             body={"Take the guess work out of your mornings and stick to the best part of coffee"}
           />
         </div>
-        <LandingFooter />
       </div>
     )
   }

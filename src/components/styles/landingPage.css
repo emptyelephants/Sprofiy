@@ -27,7 +27,7 @@
   position:absolute;
   left:50%;
   transform:translate(-50%,0);
-  padding:4px 25px;
+  padding:4px 0px;
   top:100px;
   background-color: white;
   border-radius: 0px;
@@ -81,6 +81,7 @@
 
 .tag-line-container{
   text-align: center;
+  background-color: white;
   /* border:1px solid green; */
   display:flex;
   padding:15px 0px;
@@ -88,7 +89,7 @@
   flex-wrap: wrap;
   text-align: center;
   font-size: 1.9vw;
-  margin-top: 12px;
+  margin-top: -8px;
 }
 
 .tag-line-container .tag-line-card{
@@ -116,7 +117,7 @@
   background-position:center;
   background-repeat: no-repeat;
   background-size:cover;
-  z-index: -1;
+
 }
 .tag-line-container div:nth-child(2){
   color:rgb(255,255,255);
@@ -129,7 +130,7 @@
   background-position:center;
   background-repeat: no-repeat;
   background-size:cover;
-  z-index: -1;
+
 }
 .tag-line-container div:nth-child(3){
   color:rgb(255,255,255);
@@ -141,7 +142,7 @@
   background-position:center;
   background-repeat: no-repeat;
   background-size:cover;
-  z-index: -1;
+
 }
 
 .tag-line-container h3{
@@ -166,6 +167,7 @@
   clear:both;
   display:table;
 }
+
 
 /* when the screen is big enough */
 @media only screen and (min-width: 900px) and (min-height:690px) {
@@ -209,18 +211,23 @@
     }
     .tag-line-container{
       padding:25px 5px ;
-      margin-top: 2px;
+
       display:flex;
       justify-content: space-around;
       text-align: center;
       font-size: 2.4vw;
     }
     .tag-line-container .tag-line-card{
-      width:300px;
+      width:89%;
       height:350px;
       background-color: grey;
       margin:10px 10px;
 
     }
 
+}
+@media only screen and (min-width: 1078px){
+  .tag-line-container .tag-line-card{
+    width:300px;
+  }
 }

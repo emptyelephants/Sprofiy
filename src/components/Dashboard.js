@@ -6,6 +6,7 @@ import RecipeSpread from './RecipeSpread';
 import './styles/dashboard.css'
 import NewRecipeModal from './NewRecipeModal'
 import ViewRecipeModal from './ViewRecipeModal'
+import {handleNewRecipeModal} from '../actions/controls'
 //actions
 import {incrementPage, decrementPage, fetchRecipeData} from '../actions/dashboard'
 class Dashboard extends React.Component{
@@ -16,27 +17,30 @@ class Dashboard extends React.Component{
 
   render(){
     //LOGS OUT USER
-    // if(!this.props.loggedIn){
-    //     return <Redirect to='/'/>
-    // }
+    if(!this.props.loggedIn){
+        return <Redirect to='/'/>
+    }
     console.log(this.props)
 
 
     const addRecipeForm = this.props.controls.isCreatingRecipe ? <NewRecipeModal/> : undefined;
     const viewRecipe = this.props.controls.isViewingRecipe ? <ViewRecipeModal/> : undefined;
     return(
-      <div className="dashboard">
-        <div className="header">
-          {addRecipeForm}
-          {viewRecipe}
-          <h1>good morning</h1>
-        </div>
-        <div className="user-recipe">
+    <div className="dashboard-container">
+
+      <div className="dashboard-controls">
+        <button className="dashboard-newrecipe" onClick={() => this.props.dispatch(handleNewRecipeModal())}>New Recipe</button>
+        {addRecipeForm}
+        {viewRecipe}
+      </div>
+      <div className="dashboard-body">
+        <div className="spread-container">
+
           <h2>My Recipes</h2>
           <RecipeSpread/>
         </div>
-
       </div>
+    </div>
     )
   }
 }

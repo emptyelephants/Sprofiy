@@ -11,7 +11,6 @@ export const incrementPage = () => ({
   type:INCREMENT_PAGE
 })
 
-
 export const FETCH_RECIPE_DATA_SUCCESS = 'FETCH_RECIPE_DATA_SUCCESS'
 export const fetchRecipeDataSucess = recipes => ({
   type:FETCH_RECIPE_DATA_SUCCESS,
@@ -29,6 +28,21 @@ export const fetchRecipeDataError = (error) => ({
   error
 });
 
+export const fetchRecipeData = () => (dispatch, getState) => {
+  console.log('fetching');
+  const authToken = getState().auth.authToken;
+  dispatch(fetchRecipeDataLoading())
+  return fetch(`${API_BASE_URL}/recipes`,{
+    method: 'GET',
+    headers:{
+      Authorization:`Bearer ${authToken}`
+    },
+  })
+  .then((res) => normalizeResponseErrors(res))
+  .then((res) => res.json())
+  .then((recipes) => dispatch(fetchRecipeDataSucess(recipes)))
+  .catch((err) => dispatch(fetchRecipeDataError(err)));
+};
 
 export const sendNewRecipe = (newRecipeData) => (dispatch, getState) => {
   const authToken = getState().auth.authToken;
@@ -56,21 +70,29 @@ export const sendNewRecipe = (newRecipeData) => (dispatch, getState) => {
         });
 }
 
-export const fetchRecipeData = () => (dispatch, getState) => {
-  console.log('fetching');
+export const deleteOneRecipe = (recipeId) => (dispatch, getState) =>{
   const authToken = getState().auth.authToken;
-  dispatch(fetchRecipeDataLoading())
-  return fetch(`${API_BASE_URL}/recipes`,{
-    method: 'GET',
+  return fetch(`${API_BASE_URL}/recipes/${recipeId}`,{
+    method:'DELETE',
     headers:{
-      Authorization:`Bearer ${authToken}`
-    },
+      'Authorization':`Bearer ${authToken}`
+    }
   })
   .then((res) => normalizeResponseErrors(res))
-  .then((res) => res.json())
-  .then((recipes) => dispatch(fetchRecipeDataSucess(recipes)))
-  .catch((err) => dispatch(fetchRecipeDataError(err)));
-};
+  .then((res) => {return res.status})
+    .catch(err => {
+              const {reason, message, location} = err;
+              if (reason === 'ValidationError') {
+                  // Convert ValidationErrors into SubmissionErrors for Redux Form
+                  return Promise.reject(
+                      new SubmissionError({
+                          [location]: message
+                      })
+                  );
+              }
+          });
+}
+
 export const fetchAllRecipeData = () => (dispatch,getState) => {
   console.log('fetching EVERYTHING!')
   const authToken = getState().auth.authToken;
@@ -87,8 +109,3 @@ export const fetchAllRecipeData = () => (dispatch,getState) => {
   .catch((err) => dispatch(fetchRecipeDataError(err)));
 
 }
-
-// body: JSON.stringify({
-  //   firstParam: 'yourValue',
-  //   secondParam: 'yourOtherValue',
-  // }),
