@@ -14,7 +14,6 @@ This is a recipe app for home and professional baristas to use to organize their
 
 
 ##How to run locally
-
 1. clone repo onto your local machine
 2. cd into repo and run npm install
 3. run npm start
