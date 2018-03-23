@@ -8,7 +8,6 @@ import {handleNewRecipeModal} from '../../actions/controls'
 
 export class EspressoRecipeForm extends React.Component {
     onSubmit(values) {
-      console.log(values);
     const {steps, recipeName,blurb,espressoType} = values;
     const newRecipe = {steps, recipeName, espressoType,blurb}
     this.props.dispatch(handleNewRecipeModal());

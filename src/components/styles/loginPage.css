@@ -11,7 +11,9 @@
   background-size: cover;
   background-position: top;
 }
-
+.login-page-container h2{
+  padding: 10px 0px;
+}
 .login-page-container{
   position:relative;
   top:150px;

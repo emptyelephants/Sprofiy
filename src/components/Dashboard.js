@@ -20,9 +20,6 @@ class Dashboard extends React.Component{
     if(!this.props.loggedIn){
         return <Redirect to='/'/>
     }
-    console.log(this.props)
-
-
     const addRecipeForm = this.props.controls.isCreatingRecipe ? <NewRecipeModal/> : undefined;
     const viewRecipe = this.props.controls.isViewingRecipe ? <ViewRecipeModal/> : undefined;
     return(

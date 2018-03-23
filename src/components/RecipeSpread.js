@@ -4,7 +4,6 @@ import {connect} from 'react-redux'
 import {handleViewRecipeModal} from '../actions/controls'
 class RecipeSpread extends React.Component{
   render(){
-    console.log(this.props.recipeData,'bishbashbosh');
     const recipeCards = this.props.recipeData.map((recipe,index) =>{
       return (
         <li className="recipe-card" key={recipe._id}>

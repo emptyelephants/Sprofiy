@@ -10,7 +10,6 @@ class NewRecipeModal extends React.Component{
     return this.props.dispatch(handleNewRecipeModal())
   }
   render(){
-    console.log('from modal',this.props)
     return(
       <div className="modal-container">
 
