@@ -1,0 +1,26 @@
+.recipe-controls{
+  margin-top: 15px;
+  display:flex;
+  width:100%;
+  justify-content: space-around;
+}
+.recipe-back{
+  background-color:rgb(133, 210, 249);
+  padding:1px 10px;
+}
+.recipe-share{
+  background-color: rgb(103, 221, 122);
+  padding:1px 10px;
+
+}
+.recipe-share a{
+  text-decoration: none;
+}
+.recipe-share a:visited, a:link{
+  color:white;
+}
+.recipe-delete{
+    background-color:rgba(249, 15, 15, 0.72);
+    padding:1px 10px;
+
+}

@@ -10,8 +10,8 @@ class RecipeSpread extends React.Component{
           <div className="card-deco">
           </div>
           {/* <div className="card-content"> */}
-          <h2 className="card-type">{recipe.espressoType}</h2>
           <h1 className="card-recipename">{recipe.recipeName}</h1>
+          <h2 className="card-type">{recipe.espressoType}</h2>
           <span className="card-blurb">{recipe.blurb}</span>
             {/* <button className="brew-button">brew</button> */}
           {/* </div> */}

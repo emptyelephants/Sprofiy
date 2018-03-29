@@ -11,6 +11,10 @@ This is a recipe app for home and professional baristas to use to organize their
 * Redux
 * Node
 * Express
+* MongoDb
+* mLab
+* Heroku
+* Netlify
 
 
 ## How to run locally
