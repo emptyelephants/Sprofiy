@@ -19,6 +19,4 @@ export default function RecipeContent(props){
     <span className="recipe-modal-author">Made by: {recipe.authorName}</span>
   </div>
   )
-
-
 }

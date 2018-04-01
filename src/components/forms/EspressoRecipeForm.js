@@ -6,24 +6,25 @@ import {handleNewRecipeModal} from '../../actions/controls'
 
 
 export class EspressoRecipeForm extends React.Component {
-    onSubmit(values) {
-    const {steps, recipeName,blurb,espressoType} = values;
-    const newRecipe = {steps, recipeName, espressoType,blurb}
-    this.props.dispatch(handleNewRecipeModal());
-      return this.props.dispatch(sendNewRecipe(newRecipe))
-        .then(() => this.props.dispatch(fetchRecipeData()))
-    }
-    handleNewRecipeModal(){
+  onSubmit(values) {
+  const {steps, recipeName,blurb,espressoType} = values;
+  const newRecipe = {steps, recipeName, espressoType,blurb}
+  this.props.dispatch(handleNewRecipeModal());
+    return this.props.dispatch(sendNewRecipe(newRecipe))
+      .then(() => this.props.dispatch(fetchRecipeData()))
+  }
 
-    }
-    handleCancel(){
-      this.props.dispatch(handleNewRecipeModal());
-    }
-  render(){
+  handleCancel() {
+    this.props.dispatch(handleNewRecipeModal());
+  }
+  componentDidMount() {
+
+  }
+
+  render() {
 
     const renderField = ({ input, label, type, meta: { touched, error } }) => (
     <div>
-      {/* <label>{label}</label> */}
       <div>
         <input {...input} className="recipe-form-step-input" type={type} placeholder={label} />
         {touched && error && <span>{error}</span>}
@@ -33,7 +34,7 @@ export class EspressoRecipeForm extends React.Component {
     const renderSteps = ({ fields, meta: { error } }) => (
   <ul>
     <li>
-      <button className="recipe-form-add-step"type="button" onClick={() => fields.push()}>
+      <button className="recipe-form-add-step" type="button" onClick={() => fields.push()}>
         Add Step
       </button>
     </li>
@@ -64,6 +65,7 @@ export class EspressoRecipeForm extends React.Component {
                     this.onSubmit(values)
       )}>
           <Field component="input"
+            autoFocus
             type="text"
             name="recipeName"
             placeholder="Recipe Name"
