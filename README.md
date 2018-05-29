@@ -7,7 +7,7 @@ This is a recipe app for home and professional baristas to use to organize their
 ### The link to the live website is [here](http://sproify.netlify.com/)
 #### use Miggy as a username and 1231231234 as a password for some example recipes.
 
-### Link to the server side code can be fount [here](https://github.com/emptyelephants/fullstack-serverside)
+### Link to the server side code can be found [here](https://github.com/emptyelephants/fullstack-serverside)
 
 ## Tech Stack
 * React
