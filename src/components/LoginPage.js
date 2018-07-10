@@ -8,9 +8,7 @@ export function LoginPage(props){
     return <Redirect to="/dashboard"/>
   }
   return(
-
     <div className="login-page">
-
       <div className="login-page-container">
         <h2>Welcome Back</h2>
         <LoginForm loginError={props.error} />

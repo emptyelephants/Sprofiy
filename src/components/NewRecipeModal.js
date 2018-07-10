@@ -5,14 +5,12 @@ import EspressoRecipeForm from './forms/EspressoRecipeForm'
 import './styles/newRecipeModal.css'
 
 class NewRecipeModal extends React.Component{
-
   handleRecipeModal(){
     return this.props.dispatch(handleNewRecipeModal())
   }
   render(){
     return(
       <div className="modal-container">
-
           <div className="add-recipe-background" onClick={() =>this.handleRecipeModal() }>
           </div>
           <div className="add-recipe-modal">

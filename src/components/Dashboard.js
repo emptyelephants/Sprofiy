@@ -16,7 +16,6 @@ class Dashboard extends React.Component{
   }
 
   render(){
-    //LOGS OUT USER
     if(!this.props.loggedIn){
         return <Redirect to='/'/>
     }
@@ -46,7 +45,5 @@ const mapStateToProps = state =>({
   dashboard:state.dashboard,
   controls:state.controls,
   loggedIn: state.auth.currentUser !== null
-
-
 })
 export default connect(mapStateToProps)(Dashboard);

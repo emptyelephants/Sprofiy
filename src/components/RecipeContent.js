@@ -11,7 +11,7 @@ export default function RecipeContent(props){
     <h3>{recipe.recipeName}</h3>
     <span className="recipe-blurb">{recipe.blurb}</span>
     <h4>Drink Type</h4>
-      <span className="recipe-type">{recipe.espressoType}</span>
+    <span className="recipe-type">{recipe.espressoType}</span>
     <h4 className="recipe-steps-header">Steps</h4>
     <ul className="recipe-steps">
       {recipeSteps}

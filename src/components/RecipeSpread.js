@@ -9,12 +9,9 @@ class RecipeSpread extends React.Component{
         <li className="recipe-card" key={recipe._id}>
           <div className="card-deco">
           </div>
-          {/* <div className="card-content"> */}
           <h1 className="card-recipename">{recipe.recipeName}</h1>
           <h2 className="card-type">{recipe.espressoType}</h2>
           <span className="card-blurb">{recipe.blurb}</span>
-            {/* <button className="brew-button">brew</button> */}
-          {/* </div> */}
           <div className="card-controls">
             <button
               className="card-view-recipe"
@@ -23,7 +20,6 @@ class RecipeSpread extends React.Component{
             }>
               Brew
             </button>
-
           </div>
         </li>
       )
@@ -31,10 +27,10 @@ class RecipeSpread extends React.Component{
 
     return (
       <div>
-      <ul className="recipe-spread">
-        {recipeCards}
-      </ul>
-    </div>
+        <ul className="recipe-spread">
+          {recipeCards}
+        </ul>
+      </div>
     )
   }
 };

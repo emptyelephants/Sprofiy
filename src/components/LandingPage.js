@@ -11,7 +11,6 @@ class LandingPage extends React.Component{
       return <Redirect to='/dashboard' />
     }
     return (
-
       <div className="landing-page">
         <div className="jumboTron-container">
           <div className="jumboTron-image" aria-label="Image of espresso shot pulling">
